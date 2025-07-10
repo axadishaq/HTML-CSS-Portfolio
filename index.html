@@ -194,11 +194,103 @@
             </div>
          </div>
       </section>
+      <!-- FAQ section  -->
+      <div class="faq-container">
+         <div class="faq-title">Frequently Asked Questions<span>!</span></div>
+         <div class="faq-item">
+            <div class="faq-question">
+               <span
+                  >What technologies do you specialize in as a full-stack
+                  developer?</span
+               >
+               <i class="fa-duotone fa-solid fa-caret-down fa-2xl faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               <ul>
+                  <li>MERN Stack: MongoDB, Express.js, React.js, Node.js</li>
+                  <li>TailwindCSS and Bootstrap for responsive UI</li>
+                  <li>RESTful APIs for server communication</li>
+                  <li>Familiar with version control using Git & GitHub</li>
+               </ul>
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="faq-question">
+               <span>What types of projects have you worked on?</span>
+               <i class="fa-duotone fa-solid fa-caret-down fa-2xl faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               Freelance marketplace platforms (MERN stack), E-commerce
+               interfaces (HTML, CSS, Bootstrap), Web3 UI templates, Interactive
+               UI components like dropdowns and sliders
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="faq-question">
+               <span
+                  >Can you handle both frontend and backend development?</span
+               >
+               <i class="fa-duotone fa-solid fa-caret-down fa-2xl faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               Yes, I’m equally comfortable building dynamic user interfaces
+               with React and TailwindCSS as I am developing server-side logic
+               and APIs with Node.js and Express. I ensure seamless integration
+               between frontend and backend for smooth user experiences.
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="faq-question">
+               <span>What development best practices do you follow?</span>
+               <i class="fa-duotone fa-solid fa-caret-down fa-2xl faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               <ul>
+                  <li>MVC architecture and clean code principles</li>
+                  <li>Component reusability and modular structure</li>
+                  <li>Mobile-first and responsive design</li>
+                  <li>Optimize Code and accessibility</li>
+                  <li>Use of Git for version control and collaboration</li>
+               </ul>
+            </div>
+         </div>
+         <div class="faq-item">
+            <div class="faq-question">
+               <span>How do you stay updated with new technologies?</span>
+               <i class="fa-duotone fa-solid fa-caret-down fa-2xl faq-icon"></i>
+            </div>
+            <div class="faq-answer">
+               I regularly explore new libraries, frameworks, and trends through
+               documentation, courses, and community projects. I'm committed to
+               continuous learning to ensure my skills evolve with the latest
+               industry standards.
+            </div>
+         </div>
+      </div>
       <footer>
          <div class="footer">
             <p>&copy; 2025 Asad Ishaq. All rights reserved.</p>
             <p>Made with ❤️ by Asad Ishaq</p>
          </div>
       </footer>
+
+      <!-- JAvaScript  -->
+      <!-- FAQ Script  -->
+      <script>
+         document.querySelectorAll(".faq-question").forEach((question) => {
+            question.addEventListener("click", function () {
+               const item = this.parentElement;
+               const isActive = item.classList.contains("active");
+               // Close all
+               document
+                  .querySelectorAll(".faq-item")
+                  .forEach((el) => el.classList.remove("active"));
+               // Open if not already active
+               if (!isActive) {
+                  item.classList.add("active");
+               }
+            });
+         });
+      </script>
    </body>
 </html>

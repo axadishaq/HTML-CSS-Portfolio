@@ -380,6 +380,84 @@ footer {
       display: none;
    }
 }
+/* FAQ Section  */
+.faq-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   gap: 0.9rem;
+   justify-content: center;
+   padding: 2rem 8rem;
+}
+.faq-title {
+   text-align: center;
+   font-size: 2.2rem;
+   color: #2d3748;
+   letter-spacing: 1px;
+   margin-bottom: 18px;
+}
+.faq-item {
+   border-bottom: 1px solid #d8dde4;
+
+   transition: all 0.3s ease-in-out;
+   background: transparent;
+}
+.faq-question {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   cursor: pointer;
+   font-size: 1.15rem;
+   color: #374151;
+   font-weight: 500;
+   transition: all 0.3s ease-in-out;
+   border-radius: 4px;
+   padding: 8px 12px;
+}
+.faq-question:hover {
+   background: #fff2f0;
+}
+.faq-icon {
+   color: #f47458;
+   padding-left: 6px;
+   transition: all 0.3s ease-in-out;
+   transform: scale(1.15);
+}
+
+.faq-item.active .faq-icon {
+   transform: rotate(180deg) scale(1.15);
+   color: #f47458;
+}
+.faq-answer {
+   max-height: 0;
+   overflow: hidden;
+   opacity: 0;
+   transition: all 0.3s ease-in;
+   color: #4b5563;
+   background-color: #fff2f0;
+   font-size: 1rem;
+   border-radius: 4px;
+   padding: 12px 50px;
+   margin-bottom: 4px;
+}
+.faq-item.active .faq-answer {
+   max-height: 300px;
+   opacity: 1;
+}
+@media (max-width: 768px) {
+   .faq-container {
+      padding: 1rem;
+   }
+   .faq-title {
+      font-size: 1.4rem;
+   }
+   .faq-question {
+      font-size: 1rem;
+   }
+   .faq-answer {
+      font-size: 0.97rem;
+   }
+}
 
 /* About  */
 
@@ -518,17 +596,33 @@ footer {
       height: auto;
    }
 }
+
 /* contact section  */
 .contact {
    width: 100%;
-   height: 100vh;
+   height: auto;
    display: flex;
+   flex-direction: column;
    gap: 30px;
+}
+.contact h1 {
+   padding: 1rem 0rem 0rem 1rem;
+   font-size: 2.5rem;
+   text-align: center;
+}
+.inner-contact {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 20px;
 }
 .contact-left {
    flex: 1;
    width: 50%;
-   height: 100%;
+   min-height: 400px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
 }
 .contact-content {
    width: 50%;
@@ -540,13 +634,17 @@ footer {
    gap: 30px;
    color: #f47458;
 }
-.contact-content h2 {
-   font-size: 2rem;
+.contact-content form {
+   display: flex;
+   flex-direction: column;
+   gap: 20px;
 }
 
-/* styling of Input */
+.contact-content h2 {
+   font-size: 1.5rem;
+}
+
 .input {
-   color: #f47458;
    font-size: 0.9rem;
    background-color: transparent;
    width: 250px;
@@ -570,21 +668,27 @@ textarea:focus {
    flex-direction: column;
    gap: 5px;
 }
-.contact-content a {
+.contact-content button {
    width: fit-content;
-   height: 50px;
+   padding: 12px;
    background-color: #f47458;
    color: white;
-   text-decoration: none;
    text-align: center;
    border-radius: 5px;
    font-weight: bold;
+   border: 1px solid #f47458;
+   transition: all 0.3s ease-in-out;
+   margin-top: 10px;
 }
-@media screen and (max-width: 768px) {
-   .contact {
-      flex-direction: column;
-   }
+.contact-content button:hover {
+   background-color: white;
+   color: #f47458;
+}
 
+@media screen and (max-width: 768px) {
+   .contact h1 {
+      font-size: 1rem;
+   }
    .contact-left {
       width: 100%;
       height: 50vh;
@@ -592,14 +696,18 @@ textarea:focus {
    .contact-content {
       width: 100%;
       height: auto;
-      padding: 10px;
+      padding: 40px;
       font-size: 1.2rem;
    }
    .input {
       width: 90%;
    }
-   textarea.input {
+   textarea.input,
+   button {
       width: 100%;
+   }
+   .error {
+      font-size: 0.9rem;
    }
 }
 
