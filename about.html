@@ -192,5 +192,64 @@
             <p>Made with ❤️ by Asad Ishaq</p>
          </div>
       </footer>
+      
+<!--       JAVASCRIPT -->
+       <script
+         type="text/javascript"
+         src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
+      <script type="text/javascript">
+         (function () {
+            emailjs.init("JvBkBsiJGBBaG8Enk"); // Public Key
+         })();
+      </script>
+      <script type="text/javascript">
+         const form = document.getElementById("contactForm");
+         const errorP = document.getElementById("error");
+         function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+         }
+         form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = form.name.value.trim();
+            const email = form.email.value.trim();
+            const message = form.message.value.trim();
+            errorP.style.color = "red";
+            if (!name || !email || !message) {
+               errorP.textContent = "All fields must be filled.";
+               return;
+            }
+            if (!validateEmail(email)) {
+               errorP.textContent = "Email must be in valid format.";
+               return;
+            }
+            if (message.length < 20) {
+               errorP.textContent = "Message must be at least 20 characters.";
+               return;
+            }
+            // email js
+            else {
+               errorP.style.color = "#FABE49";
+               errorP.textContent = "Sending message . . . .";
+               emailjs
+                  .sendForm("service_2wm3wur", "template_b259coe", this)
+                  .then(
+                     function () {
+                        console.log("SUCCESS!");
+                        errorP.style.color = "green";
+                        errorP.textContent = "Message sent successfully!";
+                        // alert("Your message has been sent!");
+                        form.reset(); // Clear form
+                     },
+                     function (error) {
+                        console.log("FAILED...", error);
+                        errorP.style.color = "red";
+                        errorP.textContent =
+                           "Failed to send message. Please try again later.";
+                        // alert("Failed to send message. Please try again later.");
+                     }
+                  );
+            }
+         });
+      </script>
    </body>
 </html>
