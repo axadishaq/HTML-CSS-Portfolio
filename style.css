@@ -745,7 +745,7 @@ textarea:focus {
    display: flex;
    flex-direction: column;
    align-items: center;
-   gap: 12px;
+   gap: 8px;
    transition: all 0.3s ease-in-out;
 }
 .project-card img {
@@ -763,6 +763,20 @@ textarea:focus {
 }
 .project-card:hover {
    transform: translateY(-10px);
+}
+.tech-used {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px;
+   width: fit-content;
+   justify-content: center;
+   padding: 0px 8px;
+}
+.tech1 {
+   border-radius: 4px;
+   padding: 4px 8px;
+   background: #f47458;
+   color: white;
 }
 
 /* Layout  */
