@@ -275,22 +275,8 @@
       </footer>
 
       <!-- JAvaScript  -->
-      <!-- FAQ Script  -->
-      <script>
-         document.querySelectorAll(".faq-question").forEach((question) => {
-            question.addEventListener("click", function () {
-               const item = this.parentElement;
-               const isActive = item.classList.contains("active");
-               // Close all
-               document
-                  .querySelectorAll(".faq-item")
-                  .forEach((el) => el.classList.remove("active"));
-               // Open if not already active
-               if (!isActive) {
-                  item.classList.add("active");
-               }
-            });
-         });
-      </script>
+      <!-- JAvaScript  -->
+      <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.min.js"></script>
+      <script src="main.js" defer></script>
    </body>
 </html>
