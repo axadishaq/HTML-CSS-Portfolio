@@ -51,7 +51,7 @@ projectButtons.forEach((button) => {
    button.addEventListener("click", function (event) {
       const linkHref = button.getAttribute("href");
       if (!linkHref || linkHref.trim() === "" || linkHref.trim() === "#") {
-         button.innerHTML = "Not live";
+         button.innerHTML = "Will live soon";
          button.style.color = "red";
          button.style.borderColor = "red";
          // Ensure the link doesn't navigate anywhere
@@ -59,3 +59,4 @@ projectButtons.forEach((button) => {
       }
    });
 });
+
