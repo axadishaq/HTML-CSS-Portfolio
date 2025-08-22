@@ -278,21 +278,7 @@
       <!-- JAvaScript  -->
       <script src="https://cdn.jsdelivr.net/npm/motion@12.23.12/dist/motion.min.js"></script>
       <script src="main.js" defer></script>
-      <script>
-         const projectButtons = document.querySelectorAll(".btn2");
-         projectButtons.forEach((button) => {
-         button.addEventListener("click", function (event) {
-         const linkHref = button.getAttribute("href");
-         if (!linkHref || linkHref.trim() === "" || linkHref.trim() === "#") {
-         button.innerHTML = "Will live soon";
-         button.style.color = "red";
-         button.style.borderColor = "red";
-         // Ensure the link doesn't navigate anywhere
-         button.setAttribute("href", "javascript:void(0);"); // Prevents navigation
-      }
-   });
-});
-</script>
+     
       
    </body>
 </html>
