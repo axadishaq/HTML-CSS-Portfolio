@@ -1,32 +1,32 @@
-const { animate, inView, stagger } = Motion;
+// const { animate, inView, stagger } = Motion;
 
-// Animate on page load
-animate(
-   ".hero-left",
-   { opacity: [0, 1], x: [-100, 0] }, // slide from left (-100px) to original
-   { duration: 1.5, easing: "ease-out" }
-);
+// // Animate on page load
+// animate(
+//    ".hero-left",
+//    { opacity: [0, 1], x: [-100, 0] }, // slide from left (-100px) to original
+//    { duration: 1.5, easing: "ease-out" }
+// );
 
-// Animate again when user scrolls back
-inView(".hero-left", ({ target, enter, leave }) => {
-   enter(() => {
-      animate(
-         target,
-         { opacity: [0, 1], x: [-100, 0] },
-         { duration: 1.5, easing: "ease-out" }
-      );
-   });
+// // Animate again when user scrolls back
+// inView(".hero-left", ({ target, enter, leave }) => {
+//    enter(() => {
+//       animate(
+//          target,
+//          { opacity: [0, 1], x: [-100, 0] },
+//          { duration: 1.5, easing: "ease-out" }
+//       );
+//    });
 
-   leave(() => {
-      animate(target, { opacity: 0, x: -100 }, { duration: 1 });
-   });
-});
-//child with small delay
-animate(
-   ".hero-left > *", // all direct children
-   { opacity: [0, 1], x: [-100, 0] },
-   { duration: 1, delay: stagger(0.3), easing: "ease-out" }
-);
+//    leave(() => {
+//       animate(target, { opacity: 0, x: -100 }, { duration: 1 });
+//    });
+// });
+// //child with small delay
+// animate(
+//    ".hero-left > *", // all direct children
+//    { opacity: [0, 1], x: [-100, 0] },
+//    { duration: 1, delay: stagger(0.3), easing: "ease-out" }
+// );
 
 // <!-- FAQ Script  -->
 
@@ -59,4 +59,5 @@ projectButtons.forEach((button) => {
       }
    });
 });
+
 
